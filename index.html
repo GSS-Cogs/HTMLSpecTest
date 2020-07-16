@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spec</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="page-wrap">
+
+        <h1>Specification</h1>
+        <div id="meta-data"></div>
+
+
+    </div>
+
+    <script id="specTemplate" type="text/x-handlebars-template" >
+        <h2>{{title}}</h2>
+        <table class='condform'>
+            <tbody>
+                <tr>
+                    <th>Publisher:</th>
+                    <td>{{publisher}}</td>
+                    <th rowspan="2">Github: <a href="{{{buildHref 'https://github.com/GSS-Cogs/family-covid-19/issues/' transform.main_issue}}}">  <img alt="Github issue detail" src="https://img.shields.io/github/issues/detail/state/GSS-Cogs/family-covid-19/17?style=plastic"> </a></th>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <th>Description:</th>
+                    <td>{{description}}</td>
+                    <th rowspan="2">Jenkins: <a href="https://ci.floop.org.uk/job/GSS_data/job/COVID-19/job/ONS-Coronavirus-COVID-19-related-deaths-by-occupation-England-and-Wales-deaths-registered-up-to-and-including-20-April-2020/"> <img alt="Jenkins build status" src="https://ci.floop.org.uk/buildStatus/icon?job=GSS_data%2FCOVID-19%2FONS-Coronavirus-COVID-19-related-deaths-by-occupation-England-and-Wales-deaths-registered-up-to-and-including-20-April-2020/"> </a></th>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <th>Landing Page:</th>
+                    <td><a href="{{landingPage}}">Link</a></td>
+                    <th rowspan="2">Source: <br><a>{{extract.source}}</a></th>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <th>Published:</th>
+                    <td>{{published}}</td>
+                    <th rowspan="2">Airtable: <a>{{transform.airtable}}</a></th>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <th>Sizing Notes:</th>
+                    <td>{{sizingNotes}}</td>
+                    <th rowspan="2">Priority: <br><a>{{transform.stage}}</a></th>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <th>Dataset Notes:</th>
+                    <td>{{datasetNotes}}</td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <th><span class="font-weight-bold"> Notes: </span> </th>
+                    <td>{{notes}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="override">Stage 1:</h2>
+            {{#transform}}
+                {{#transformStage}}
+                <ul>
+                    <table>
+                        <tbody>
+                            <th><span class="test"> Tab Name: </span></th> <td><a>{{name}} </a></td>
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                            <th><span class="test"> Tab Title: </span></th> <td><a>{{title}} </a></td>
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                            <th><span class="test"> Columns: </span></th> <td></td>
+                        </tbody>
+                    </table>
+
+                    <ul>
+                        <table class="condform2">
+                        {{#each columns}}
+                                <tbody>
+                                    <th>{{@key}}:</th>
+                                    <td>{{this}}</td>
+                                </tbody>
+                        {{/each}}
+                        </table>
+                    </ul>
+                </ul>
+                {{/transformStage}}
+            {{/transform}}
+
+    </script>
+
+    <script src="js/handlebars-v4.7.6.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
