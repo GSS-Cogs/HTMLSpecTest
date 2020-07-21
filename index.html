@@ -84,10 +84,21 @@
                         <table class="condform2">
                         {{#each columns}}
                                 <tbody>
-                                    <th>{{@key}}:</th>
-                                    <td>{{this}}</td>
+                                    <th class="condform2">{{@key}}:</th>
+                                    <td class="condform2">{{this}}</td>
                                 </tbody>
                         {{/each}}
+                        {{#postTransformNotes}}
+                            {{#each columns}}
+                            <table class="postNotes">
+                                <th class="postNotes">{{@key}}:</th>
+                                {{#each this}}
+                                <tr></tr>
+                                <td class="postNotes">{{this}}</td>
+                                {{/each}}
+                            </table>
+                            {{/each}}
+                        {{/postTransformNotes}}
                         </table>
                     </ul>
                 </ul>
