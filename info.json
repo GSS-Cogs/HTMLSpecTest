@@ -64,7 +64,7 @@
                     "columns": {
                         "Size of Care Home": [
                             "Remove 'Beds:' from every entry, leaving only the numbers",
-                            "Remove 'Beds:' from every entry, leaving only the numbers"
+                            "'Tester"
                         ],
                         "OBS": [
                             "'Multiple values by 100 if they are Percentages to correct from Excel formatting"
@@ -99,6 +99,79 @@
                         ],
                         "Unit": [
                             "Update Unit to 'Percent' for percentage values"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "Table 3 - Local Authority",
+                "title": "Table 4 - Weekly cumulative number of suspected COVID-19 cases per 1,000 registered places and proportion of adult care homes with suspected COVID-19 case, by Local Authority",
+                "columns": {
+                    "Period": "{C5-P5}",
+                    "Local Authority": "{B6-B78}",
+                    "Measure Type": "Cumulative Count",
+                    "Unit": "Per 1000 Care Homes"
+                },
+                "postTransformNotes": {
+                    "name": "Table 3 - Local Authority",
+                    "columns": {
+                        "OBS": [
+                            "'Multiple values by 100 if they are Percentages to correct from Excel formatting"
+                        ],
+                        "Marker": [
+                            "Change * DataMarker to 'Statistical Disclosure Applied'"
+                        ],
+                        "Measure Type": [
+                            "Update Measure Type to 'Cumulative Percentage' for percentage values"
+                        ],
+                        "Unit": [
+                            "Update Unit to 'Percent' for percentage values"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "Table 4 - NHS Board",
+                "title": "Table 5 - Weekly cumulative number of suspected COVID-19 cases per 1,000 registered places and proportion of adult care homes with suspected COVID-19 case, by Health Board",
+                "columns": {
+                    "Period": "{C5-P5}",
+                    "NHS Board": "{B6-B42}",
+                    "Measure Type": "Cumulative Count",
+                    "Unit": "Per 1000 Care Homes"
+                },
+                "postTransformNotes": {
+                    "name": "Table 4 - NHS Board",
+                    "columns": {
+                        "OBS": [
+                            "'Multiple values by 100 if they are Percentages to correct from Excel formatting"
+                        ],
+                        "Marker": [
+                            "Change * DataMarker to 'Statistical Disclosure Applied'"
+                        ],
+                        "Measure Type": [
+                            "Update Measure Type to 'Cumulative Percentage' for percentage values"
+                        ],
+                        "Unit": [
+                            "Update Unit to 'Percent' for percentage values"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "Table 5 - People Tested",
+                "title": "Table 5 - Number of Residents and Staff tested in Adult Care Homes",
+                "columns": {
+                    "Period": "{C4-P4}",
+                    "NHS Board": "{B7-B21}",
+                    "People Tested": "{C6-S6}",
+                    "Measure Type": "Count",
+                    "Unit": "Person"
+                },
+                "postTransformNotes": {
+                    "name": "Table 5 - People Tested",
+                    "columns": {
+                        "Period": [
+                            "Remove superscript ('1,2,3') tags from Period values (add relevant notes to notes section)"
                         ]
                     }
                 }
